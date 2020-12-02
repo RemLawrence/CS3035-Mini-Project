@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="560.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.controller.TaskListController">
+   <children>
+      <BorderPane prefWidth="200.0">
+         <center>
+            <MenuBar BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Action">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#add" text="Add New Yask" />
+                        <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task" />
+                        <MenuItem mnemonicParsing="false" onAction="#close" text="Exit" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#help" text="Help" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </center>
+         <right>
+            <Button mnemonicParsing="false" onAction="#back" text="Calendar" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="To-do List Page" VBox.vgrow="ALWAYS" />
+            <Label fx:id="lb_day" alignment="CENTER" maxWidth="1.7976931348623157E308" text="--" />
+            <Label text="Reminder for today"/>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS">
+               <content>
+                  <VBox fx:id="contentDay" spacing="1.0" />
+               </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ScrollPane>
+            <Label text="Deadline in three days" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS">
+               <content>
+                  <VBox fx:id="contentDeadline" spacing="1.0" />
+               </content>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>

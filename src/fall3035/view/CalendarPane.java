@@ -1,0 +1,189 @@
+package fall3035.view;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import javafx.collections.ObservableList;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+
+public class CalendarPane extends VBox {
+	private static final int CELL_WIDTH = 100;
+	Calendar calendar;
+
+	public CalendarPane() {
+		setPrefWidth(USE_PREF_SIZE);
+		Background background = new Background(new BackgroundFill(Color.WHITE,
+				null, null));
+		setBackground(background);
+		setAlignment(Pos.CENTER);
+		calendar = Calendar.getInstance();
+		draw(calendar);
+		setPadding(new Insets(10));
+	}
+
+	public void next() {
+		calendar.add(Calendar.MONTH, 1);
+		draw(calendar);
+	}
+
+	public void previous() {
+		calendar.add(Calendar.MONTH, -1);
+		draw(calendar);
+	}
+
+	public ItemPane addTodo(String day, String title) {
+		ObservableList<Node> cells = ((GridPane) getChildren().get(0))
+				.getChildren();
+		for (Node node : cells) {
+			if (node instanceof Cell) {
+				Cell c = (Cell) node;
+				if (day.equals(c.day)) {
+					if (c.getChildren().size() > 3) {
+						return null;
+					}
+					if (title.length() > 16) {
+						title = title.substring(0, 16) + "..";
+					}
+					ItemPane itemPane = new ItemPane(title);
+					itemPane.getText().setFont(
+							Font.font("", FontWeight.BOLD, 11));
+					itemPane.getText().setFill(Paint.valueOf("#008080"));
+					itemPane.getText().setWrappingWidth(88);
+					itemPane.setPrefWidth(CELL_WIDTH);
+					c.getChildren().add(itemPane);
+					return itemPane;
+				}
+			}
+		}
+		return null;
+	}
+
+	public void draw(Calendar calendar) {
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH) + 1;
+		int allDay = calendar.getActualMaximum(Calendar.DATE);
+		calendar.set(Calendar.DAY_OF_MONTH, 1);
+		int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
+
+		GridPane gridPane = new GridPane();
+
+		String[] weekNames = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu",
+				"Fri", "Sat" };
+
+		Text title = new Text(String.format("%d-%02d", year, month));
+		title.setStroke(Color.GRAY);
+		title.setFont(new Font(20));
+		gridPane.setAlignment(Pos.CENTER);
+		gridPane.add(title, 0, 0);
+		GridPane.setColumnSpan(title, 7);
+		GridPane.setHalignment(title, HPos.CENTER);
+
+		for (int i = 0; i < weekNames.length; i++) {
+			Label label = new Label(weekNames[i]);
+			if (i == 0 || i == 6) {
+				label.setTextFill(Color.RED);
+			}
+			VBox vBox = new VBox(label);
+			vBox.setPrefHeight(40);
+			Background background = new Background(new BackgroundFill(
+					Color.WHITE, null, null));
+			vBox.setBackground(background);
+			vBox.setAlignment(Pos.CENTER);
+			GridPane.setHgrow(vBox, Priority.ALWAYS);
+			GridPane.setVgrow(vBox, Priority.ALWAYS);
+			gridPane.add(vBox, i, 1);
+			gridPane.getColumnConstraints().add(
+					new ColumnConstraints(CELL_WIDTH));
+		}
+		for (int i = 0; i < allDay; i++) {
+			Cell cell = new Cell(i + 1 + "", String.format("%d-%02d-%02d",
+					year, month, (i + 1)));
+			int m = dayOfWeek + i;
+			GridPane.setHgrow(cell, Priority.ALWAYS);
+			GridPane.setVgrow(cell, Priority.ALWAYS);
+			gridPane.add(cell, m % 7, 2 + m / 7);
+		}
+		if (getChildren().size() == 1) {
+			getChildren().set(0, gridPane);
+		} else {
+			getChildren().add(gridPane);
+		}
+	}
+
+	public static class Cell extends VBox {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		String day;
+		Label label;
+
+		public Cell(String text, String day) {
+			this.day = day;
+			label = new Label(text);
+			label.setFont(Font.font(null, FontWeight.BOLD, 12));
+			label.setPrefWidth(CELL_WIDTH);
+			label.setAlignment(Pos.CENTER_RIGHT);
+			
+			setUserData(day);
+			setMinHeight(50);
+			Border b = new Border(new BorderStroke(Color.valueOf("#fb0"),
+					BorderStrokeStyle.SOLID, CornerRadii.EMPTY,
+					BorderWidths.DEFAULT));
+			setBorder(b);
+			getChildren().add(label);
+			if (day.equals(sdf.format(new Date()))) {
+				Background background = new Background(new BackgroundFill(
+						Color.valueOf("#fb0"), null, null));
+				setBackground(background);
+			}
+
+			setOnMouseEntered(new EventHandler<Event>() {
+
+				@Override
+				public void handle(Event paramT) {
+					Background background = new Background(new BackgroundFill(
+							Color.valueOf("ffbb008a"), null, null));
+					setBackground(background);
+				}
+			});
+			setOnMouseExited(new EventHandler<Event>() {
+
+				@Override
+				public void handle(Event paramT) {
+					if (!day.equals(sdf.format(new Date()))) {
+						Background background = new Background(
+								new BackgroundFill(Color.WHITE, null, null));
+						setBackground(background);
+					} else {
+						Background background = new Background(new BackgroundFill(
+								Color.valueOf("#fb0"), null, null));
+						setBackground(background);
+					}
+				}
+			});
+		}
+	}
+
+}
