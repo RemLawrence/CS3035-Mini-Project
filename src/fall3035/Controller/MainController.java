@@ -5,9 +5,9 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import fall3035.Model.Task;
-import fall3035.View.CalendarPane;
+import fall3035.View.CalendarWidget;
 import fall3035.View.ItemPane;
-import fall3035.View.CalendarPane.Cell;
+import fall3035.View.CalendarWidget.Cell;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,13 +24,13 @@ public class MainController extends BaseController implements Initializable {
 
     @FXML
     ScrollPane content;
-    CalendarPane calendarPane;
+    CalendarWidget calendarWidget;
 
     @Override
     public void initialize(URL paramURL, ResourceBundle paramResourceBundle) {
 
-        calendarPane = new CalendarPane();
-        VBox flowPane = new VBox(calendarPane);
+        calendarWidget = new CalendarWidget();
+        VBox flowPane = new VBox(calendarWidget);
         flowPane.setAlignment(Pos.TOP_CENTER);
 
         content.setContent(flowPane);
@@ -41,7 +41,7 @@ public class MainController extends BaseController implements Initializable {
     private void update(){
         for (Task task : model.getTasks()) {
 
-            ItemPane addTodo = calendarPane.addTodo(task.getPreferDate(), task.getDescription());
+            ItemPane addTodo = calendarWidget.addTodo(task.getPreferDate(), task.getDescription());
             if (addTodo != null) {
                 if (task.isFinish()) {
                     addTodo.setStrikethrough(true);
@@ -57,7 +57,7 @@ public class MainController extends BaseController implements Initializable {
                 }
             }
         }
-        ObservableList<Node> cells = ((GridPane) calendarPane.getChildren().get(0)).getChildren();
+        ObservableList<Node> cells = ((GridPane) calendarWidget.getChildren().get(0)).getChildren();
         for (Node node : cells) {
             if (node instanceof Cell && node.getOnMouseClicked() == null) {
                 node.setOnMouseClicked(e -> {
@@ -70,13 +70,13 @@ public class MainController extends BaseController implements Initializable {
 
     @FXML
     public void previous() {
-        calendarPane.previous();
+        calendarWidget.previous();
         update();
     }
 
     @FXML
     public void next() {
-        calendarPane.next();
+        calendarWidget.next();
         update();
     }
 

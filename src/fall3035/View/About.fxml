@@ -3,35 +3,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.BaseController">
-   <children>
-      <BorderPane prefWidth="200.0">
-         <center>
-            <MenuBar BorderPane.alignment="CENTER">
-               <menus>
-                  <Menu mnemonicParsing="false" text="Action">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#addTask" text="Add New Yask" />
-                        <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task" />
-                        <MenuItem mnemonicParsing="false" onAction="#close" text="Exit" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Help">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#help" text="Help" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
-                     </items>
-                  </Menu>
-               </menus>
-            </MenuBar>
-         </center>
-         <right>
-            <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER" />
-         </right>
-      </BorderPane>
-      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="About" />
-      <Label id="p" text="Jiakui Tan 3537187" wrapText="true" />
-      <Label id="p" text="Yanqiao Wang 3577399" wrapText="true" />
-      <Label id="p" text="Yueheng Zhang 3555761" wrapText="true" />
-   </children>
+<VBox fx:id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.BaseController">
+   <BorderPane prefWidth="200.0">
+      <center>
+         <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="Action">
+               <MenuItem mnemonicParsing="false" onAction="#addTask" text="Add New Yask"/>
+               <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task"/>
+               <MenuItem mnemonicParsing="false" onAction="#close" text="Exit"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <MenuItem mnemonicParsing="false" onAction="#help" text="Help"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <MenuItem mnemonicParsing="false" onAction="#about" text="About"/>
+            </Menu>
+         </MenuBar>
+      </center>
+      <right>
+         <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER"/>
+      </right>
+   </BorderPane>
+   <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="About"/>
+   <Label id="p" text="Jiakui Tan 3537187" wrapText="true"/>
+   <Label id="p" text="Yanqiao Wang 3577399" wrapText="true"/>
+   <Label id="p" text="Yueheng Zhang 3555761" wrapText="true"/>
 </VBox>

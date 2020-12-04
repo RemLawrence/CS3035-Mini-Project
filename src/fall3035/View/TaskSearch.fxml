@@ -1,72 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="560.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.TaskSearchController">
-   <children>
-      <BorderPane prefWidth="200.0">
-         <center>
-            <MenuBar BorderPane.alignment="CENTER">
-               <menus>
-                  <Menu mnemonicParsing="false" text="Action">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#addTask" text="Add New Yask" />
-                        <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task" />
-                        <MenuItem mnemonicParsing="false" onAction="#close" text="Exit" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Help">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#help" text="Help" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
-                     </items>
-                  </Menu>
-               </menus>
-            </MenuBar>
-         </center>
-         <right>
-            <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER" />
-         </right>
-      </BorderPane>
-      <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS">
-         <children>
-            <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Search Page" VBox.vgrow="ALWAYS" />
-            <Label text="Date range from now:" />
-            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="20.0">
-               <children>
-                  <TextField fx:id="day" maxWidth="100.0" prefWidth="100.0" />
-                  <Label text="days" />
-               </children>
-            </HBox>
-            <FlowPane hgap="20.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#byDate" text="By Date" />
-                  <Button mnemonicParsing="false" onAction="#byDeadline" text="By Deadline" />
-                  <Button mnemonicParsing="false" onAction="#byPriority" text="By Priority" />
-               </children>
-            </FlowPane>
-            <Button mnemonicParsing="false" onAction="#search" text="Search" />
-            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
-               <content>
-                  <VBox fx:id="content" spacing="3.0" />
-               </content>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-            </ScrollPane>
-         </children>
-         <padding>
-            <Insets left="20.0" right="20.0" />
-         </padding>
-      </VBox>
-   </children>
+<VBox fx:id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="500.0" prefWidth="560.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.TaskSearchController">
+   <BorderPane prefWidth="200.0">
+      <center>
+         <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="Action">
+               <MenuItem mnemonicParsing="false" onAction="#addTask" text="Add New Yask"/>
+               <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task"/>
+               <MenuItem mnemonicParsing="false" onAction="#close" text="Exit"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <MenuItem mnemonicParsing="false" onAction="#help" text="Help"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <MenuItem mnemonicParsing="false" onAction="#about" text="About"/>
+            </Menu>
+         </MenuBar>
+      </center>
+      <right>
+         <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER"/>
+      </right>
+   </BorderPane>
+
+   <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS">
+      <padding>
+         <Insets left="20.0" right="20.0"/>
+      </padding>
+      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Search Page" VBox.vgrow="ALWAYS"/>
+      <Label text="Date range from now:"/>
+      <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="20.0">
+         <TextField fx:id="day" maxWidth="100.0" prefWidth="100.0"/>
+         <Label text="days"/>
+      </HBox>
+      <FlowPane hgap="20.0" prefWidth="200.0">
+         <Button mnemonicParsing="false" onAction="#byDate" text="By Date"/>
+         <Button mnemonicParsing="false" onAction="#byDeadline" text="By Deadline"/>
+         <Button mnemonicParsing="false" onAction="#byPriority" text="By Priority"/>
+      </FlowPane>
+      <Button mnemonicParsing="false" onAction="#search" text="Search"/>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0"
+                  vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="20.0"/>
+         </VBox.margin>
+         <VBox fx:id="content" spacing="3.0"/>
+      </ScrollPane>
+   </VBox>
 </VBox>

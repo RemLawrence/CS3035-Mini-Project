@@ -8,21 +8,17 @@
       <BorderPane prefWidth="200.0">
          <center>
             <MenuBar BorderPane.alignment="CENTER">
-               <menus>
-                  <Menu mnemonicParsing="false" text="Action">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#addTask" text="Add New Yask" />
-                        <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task" />
-                        <MenuItem mnemonicParsing="false" onAction="#close" text="Exit" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Help">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#help" text="Help" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
-                     </items>
-                  </Menu>
-               </menus>
+               <Menu mnemonicParsing="false" text="Action">
+                  <MenuItem mnemonicParsing="false" onAction="#addTask" text="Add New Yask"/>
+                  <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task"/>
+                  <MenuItem mnemonicParsing="false" onAction="#close" text="Exit"/>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                  <MenuItem mnemonicParsing="false" onAction="#help" text="Help"/>
+               </Menu>
+               <Menu mnemonicParsing="false" text="About">
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="About"/>
+               </Menu>
             </MenuBar>
          </center>
          <right>

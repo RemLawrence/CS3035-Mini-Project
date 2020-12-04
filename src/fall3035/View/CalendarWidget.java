@@ -29,13 +29,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
-public class CalendarPane extends VBox {
+public class CalendarWidget extends VBox {
 	private static final int CELL_WIDTH = 100;
 	Calendar calendar;
 
-	public CalendarPane() {
+	public CalendarWidget() {
 		setPrefWidth(USE_PREF_SIZE);
-		Background background = new Background(new BackgroundFill(Color.WHITE, null, null));
+		Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, null, null));
 		setBackground(background);
 		setAlignment(Pos.CENTER);
 		calendar = Calendar.getInstance();
@@ -106,8 +106,7 @@ public class CalendarPane extends VBox {
 			}
 			VBox vBox = new VBox(label);
 			vBox.setPrefHeight(40);
-			Background background = new Background(new BackgroundFill(
-					Color.WHITE, null, null));
+			Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, null, null));
 			vBox.setBackground(background);
 			vBox.setAlignment(Pos.CENTER);
 			GridPane.setHgrow(vBox, Priority.ALWAYS);
@@ -173,8 +172,7 @@ public class CalendarPane extends VBox {
 				@Override
 				public void handle(Event paramT) {
 					if (!day.equals(sdf.format(new Date()))) {
-						Background background = new Background(
-								new BackgroundFill(Color.WHITE, null, null));
+						Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, null, null));
 						setBackground(background);
 					} else {
 						Background background = new Background(new BackgroundFill(
