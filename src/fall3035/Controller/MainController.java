@@ -5,9 +5,9 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import fall3035.Model.Task;
-import fall3035.View.CalendarWidget;
-import fall3035.View.ItemPane;
-import fall3035.View.CalendarWidget.Cell;
+import fall3035.Widget.CalendarWidget;
+import fall3035.Widget.EventWidget;
+import fall3035.Widget.CalendarWidget.Cell;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,7 +41,7 @@ public class MainController extends BaseController implements Initializable {
     private void update(){
         for (Task task : model.getTasks()) {
 
-            ItemPane addTodo = calendarWidget.addTodo(task.getPreferDate(), task.getDescription());
+            EventWidget addTodo = calendarWidget.addTodo(task.getPreferDate(), task.getDescription());
             if (addTodo != null) {
                 if (task.isFinish()) {
                     addTodo.setStrikethrough(true);

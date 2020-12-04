@@ -1,4 +1,4 @@
-package fall3035.View;
+package fall3035.Widget;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -53,7 +53,7 @@ public class CalendarWidget extends VBox {
 		draw(calendar);
 	}
 
-	public ItemPane addTodo(String day, String title) {
+	public EventWidget addTodo(String day, String title) {
 		ObservableList<Node> cells = ((GridPane) getChildren().get(0))
 				.getChildren();
 		for (Node node : cells) {
@@ -66,14 +66,14 @@ public class CalendarWidget extends VBox {
 					if (title.length() > 16) {
 						title = title.substring(0, 16) + "..";
 					}
-					ItemPane itemPane = new ItemPane(title);
-					itemPane.getText().setFont(
+					EventWidget eventWidget = new EventWidget(title);
+					eventWidget.getText().setFont(
 							Font.font("", FontWeight.BOLD, 11));
-					itemPane.getText().setFill(Paint.valueOf("#008080"));
-					itemPane.getText().setWrappingWidth(88);
-					itemPane.setPrefWidth(CELL_WIDTH);
-					c.getChildren().add(itemPane);
-					return itemPane;
+					eventWidget.getText().setFill(Paint.valueOf("#008080"));
+					eventWidget.getText().setWrappingWidth(88);
+					eventWidget.setPrefWidth(CELL_WIDTH);
+					c.getChildren().add(eventWidget);
+					return eventWidget;
 				}
 			}
 		}

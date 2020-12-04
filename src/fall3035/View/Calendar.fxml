@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="500.0" prefWidth="760.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
+<VBox prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.MainController">
     <MenuBar>
         <Menu mnemonicParsing="false" text="Add">

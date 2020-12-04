@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import fall3035.Model.Task;
-import fall3035.View.ItemPane;
+import fall3035.Widget.EventWidget;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -59,23 +59,23 @@ public class TaskListController extends BaseController implements Initializable 
    	 for (int i = 0; i < tasks.size(); i++) {
 
             Task task = tasks.get(i);
-            ItemPane itemPane = new ItemPane((i + 1) + " . " + task.getDescription(), false);
+            EventWidget eventWidget = new EventWidget((i + 1) + " . " + task.getDescription(), false);
             Background background = new Background(new BackgroundFill(Color.valueOf("#fff"), null, null));
-            itemPane.setBackground(background);
-            itemPane.addMouseStyle();
-            itemPane.getText().setFont(Font.font("", FontWeight.BOLD, 12));
-            itemPane.getText().wrappingWidthProperty().set(430);
+            eventWidget.setBackground(background);
+            eventWidget.addMouseStyle();
+            eventWidget.getText().setFont(Font.font("", FontWeight.BOLD, 12));
+            eventWidget.getText().wrappingWidthProperty().set(430);
             if (task.isFinish()) {
-                itemPane.getCheckBox().selectedProperty().set(true);
-                itemPane.setStrikethrough(true);
+                eventWidget.getCheckBox().selectedProperty().set(true);
+                eventWidget.setStrikethrough(true);
             }
-            itemPane.getCheckBox().selectedProperty().addListener((observable, oldValue, newValue) -> {
-                itemPane.setStrikethrough(newValue);
+            eventWidget.getCheckBox().selectedProperty().addListener((observable, oldValue, newValue) -> {
+                eventWidget.setStrikethrough(newValue);
                 task.setFinish(newValue);
                 model.update(task);
                 initialize(null, null);
             });
-			itemPane.addDelete().setOnAction(e -> {
+			eventWidget.delete().setOnAction(e -> {
 				Alert alert = new Alert(AlertType.CONFIRMATION);
 				alert.setContentText("Delete?");
 				alert.setResultConverter(new Callback<ButtonType, ButtonType>() {
@@ -83,7 +83,7 @@ public class TaskListController extends BaseController implements Initializable 
 					@Override
 					public ButtonType call(ButtonType buttonType) {
 						if (buttonType == ButtonType.OK) {
-							itemPane.getChildren().clear();
+							eventWidget.getChildren().clear();
 							model.delete(task);
 							initialize(null, null);
 						}
@@ -92,11 +92,11 @@ public class TaskListController extends BaseController implements Initializable 
 				});
 				alert.showAndWait();
 			});
-            itemPane.setOnMouseClicked(e-> {
+            eventWidget.setOnMouseClicked(e-> {
                     stage.setUserData(task);
                     loadView("/fall3035/View/TaskModify.fxml", stage, model);
             });
-            content.getChildren().add(itemPane);
+            content.getChildren().add(eventWidget);
         }
    }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import fall3035.Model.Task;
-import fall3035.View.ItemPane;
+import fall3035.Widget.EventWidget;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -35,30 +35,30 @@ public class TaskSearchController extends BaseController implements Initializabl
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
 
-            ItemPane itemPane = new ItemPane((i + 1) + " . " + task.getDescription()+"\n\t"+task.getPreferDate(), false);
+            EventWidget eventWidget = new EventWidget((i + 1) + " . " + task.getDescription()+"\n\t"+task.getPreferDate(), false);
             Background background = new Background(new BackgroundFill(Color.valueOf("#fff"), null, null));
-            itemPane.setBackground(background);
-            itemPane.addMouseStyle();
-            itemPane.getText().wrappingWidthProperty().set(430);
-            itemPane.getText().setFont(Font.font("", FontWeight.BOLD, 12));
+            eventWidget.setBackground(background);
+            eventWidget.addMouseStyle();
+            eventWidget.getText().wrappingWidthProperty().set(430);
+            eventWidget.getText().setFont(Font.font("", FontWeight.BOLD, 12));
             if (task.isFinish()) {
-                itemPane.getCheckBox().selectedProperty().set(true);
-                itemPane.setStrikethrough(true);
+                eventWidget.getCheckBox().selectedProperty().set(true);
+                eventWidget.setStrikethrough(true);
             }
-            itemPane.getCheckBox().selectedProperty().addListener((observable, oldValue, newValue) -> {
-                itemPane.setStrikethrough(newValue);
+            eventWidget.getCheckBox().selectedProperty().addListener((observable, oldValue, newValue) -> {
+                eventWidget.setStrikethrough(newValue);
                 task.setFinish(newValue);
                 model.update(task);
             });
-            itemPane.addDelete().setOnMouseClicked(new EventHandler<Event>() {
+            eventWidget.delete().setOnMouseClicked(new EventHandler<Event>() {
 
                 @Override
                 public void handle(Event event) {
-                    itemPane.getChildren().clear();
+                    eventWidget.getChildren().clear();
                     model.delete(task);
                 }
             });
-            content.getChildren().add(itemPane);
+            content.getChildren().add(eventWidget);
         }
     }
 

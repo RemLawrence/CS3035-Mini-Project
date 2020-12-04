@@ -1,4 +1,4 @@
-package fall3035.View;
+package fall3035.Widget;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -12,20 +12,20 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class ItemPane extends HBox {
+public class EventWidget extends HBox {
 
     Text text = new Text();
     CheckBox checkBox = new CheckBox();
 
-    public ItemPane(String text) {
+    public EventWidget(String text) {
         this(text, true, false);
     }
 
-    public ItemPane(String text, boolean hasLiStyle) {
+    public EventWidget(String text, boolean hasLiStyle) {
         this(text, hasLiStyle, true);
     }
 
-    public ItemPane(String str, boolean hasLiStyle, boolean hasCheckBox) {
+    public EventWidget(String str, boolean hasLiStyle, boolean hasCheckBox) {
         super();
         setAlignment(Pos.CENTER_LEFT);
         if (hasLiStyle) {
@@ -63,11 +63,13 @@ public class ItemPane extends HBox {
 			}
 		});
 	}
-	public Button addDelete(){
-        Button e = new Button("X");
-        e.setId("delete");
-        getChildren().add(e);
-        return e;
+
+	public Button delete(){
+        Button delete = new Button("x");
+        delete.setId("delete");
+        getChildren().add(delete);
+
+        return delete;
 	}
 
 	public void setStrikethrough(boolean f){
