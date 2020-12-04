@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import fall3035.Model.Task;
 import fall3035.Widget.CalendarWidget;
 import fall3035.Widget.EventWidget;
-import fall3035.Widget.CalendarWidget.Cell;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,7 +58,7 @@ public class MainController extends BaseController implements Initializable {
         }
         ObservableList<Node> cells = ((GridPane) calendarWidget.getChildren().get(0)).getChildren();
         for (Node node : cells) {
-            if (node instanceof Cell && node.getOnMouseClicked() == null) {
+            if (node instanceof CalendarWidget.CalendarCell && node.getOnMouseClicked() == null) {
                 node.setOnMouseClicked(e -> {
                     stage.setUserData(node.getUserData());
                     loadView("/fall3035/View/TaskList.fxml", stage, model);
