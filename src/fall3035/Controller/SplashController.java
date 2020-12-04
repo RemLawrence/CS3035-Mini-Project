@@ -27,7 +27,7 @@ public class SplashController extends BaseController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 stage.hide();
-                BaseController.loadView("/fall3035/View/Main.fxml",new Stage(), model);
+                BaseController.loadView("/fall3035/View/Calendar.fxml",new Stage(), model);
             }
         });
 

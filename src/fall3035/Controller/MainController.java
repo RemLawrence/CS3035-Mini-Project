@@ -67,11 +67,11 @@ public class MainController extends BaseController implements Initializable {
             }
         }
     }
+
     @FXML
     public void previous() {
         calendarPane.previous();
         update();
-
     }
 
     @FXML

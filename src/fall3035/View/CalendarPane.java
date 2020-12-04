@@ -89,8 +89,7 @@ public class CalendarPane extends VBox {
 
 		GridPane gridPane = new GridPane();
 
-		String[] weekNames = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu",
-				"Fri", "Sat" };
+		String[] week = new String[] {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
 
 		Text title = new Text(String.format("%d-%02d", year, month));
 		title.setStroke(Color.GRAY);
@@ -100,8 +99,8 @@ public class CalendarPane extends VBox {
 		GridPane.setColumnSpan(title, 7);
 		GridPane.setHalignment(title, HPos.CENTER);
 
-		for (int i = 0; i < weekNames.length; i++) {
-			Label label = new Label(weekNames[i]);
+		for (int i = 0; i < week.length; i++) {
+			Label label = new Label(week[i]);
 			if (i == 0 || i == 6) {
 				label.setTextFill(Color.RED);
 			}

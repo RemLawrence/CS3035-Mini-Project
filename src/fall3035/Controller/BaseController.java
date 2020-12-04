@@ -3,7 +3,6 @@ package fall3035.Controller;
 import java.io.IOException;
 
 import fall3035.Model.Model;
-import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class BaseController {
     Model model;
@@ -59,7 +57,7 @@ public class BaseController {
     }
 
     @FXML
-    public void add() {
+    public void addTask() {
         loadView("/fall3035/View/TaskAdd.fxml", stage, model);
     }
 
@@ -85,6 +83,6 @@ public class BaseController {
 
     @FXML
     public void back() {
-        loadView("/fall3035/View/Main.fxml", stage, model);
+        loadView("/fall3035/View/Calendar.fxml", stage, model);
     }
 }
