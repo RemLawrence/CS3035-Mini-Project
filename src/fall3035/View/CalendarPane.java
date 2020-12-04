@@ -35,8 +35,7 @@ public class CalendarPane extends VBox {
 
 	public CalendarPane() {
 		setPrefWidth(USE_PREF_SIZE);
-		Background background = new Background(new BackgroundFill(Color.WHITE,
-				null, null));
+		Background background = new Background(new BackgroundFill(Color.WHITE, null, null));
 		setBackground(background);
 		setAlignment(Pos.CENTER);
 		calendar = Calendar.getInstance();

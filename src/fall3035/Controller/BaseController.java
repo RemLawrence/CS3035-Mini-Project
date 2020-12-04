@@ -17,10 +17,6 @@ public class BaseController {
     Model model;
     Stage stage;
 
-    public Model getModel() {
-        return model;
-    }
-
     public void setModel(Model model) {
         this.model = model;
     }
@@ -50,17 +46,12 @@ public class BaseController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert root != null;
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("TODO");
+        stage.setTitle("The Ultimate To Do App");
         stage.centerOnScreen();
         stage.show();
-
-        FadeTransition fade = new FadeTransition(Duration.seconds(0.3), root);
-        fade.setFromValue(0.2);
-        fade.setToValue(1);
-        fade.setCycleCount(1);
-        fade.play();
     }
 
     public void showAlert(String msg){

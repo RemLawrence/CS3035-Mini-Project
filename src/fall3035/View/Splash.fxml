@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox id="splash" fx:id="content" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.SplashController">
-   <children>
-      <Text fx:id="text" stroke="#7a4949" strokeType="OUTSIDE" text="Welcome to The Calendar App!">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-         <fill>
-            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="BLACK" />
-                  <Stop color="BLACK" offset="0.1875" />
-                  <Stop color="#d01616" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill></Text>
-   </children>
+<VBox id="splash"
+      fx:id="content"
+      alignment="CENTER"
+      prefHeight="500.0"
+      prefWidth="500.0"
+      stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fall3035.Controller.SplashController">
 </VBox>
