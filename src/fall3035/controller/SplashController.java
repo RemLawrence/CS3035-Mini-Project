@@ -1,4 +1,4 @@
-package fall3035.controller;
+package fall3035.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,7 +30,7 @@ public class SplashController extends BaseController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 stage.hide();
-                BaseController.loadView("/fall3035/view/TaskList.fxml",new Stage(), model);
+                BaseController.loadView("/fall3035/View/TaskList.fxml",new Stage(), model);
             }
         });
 

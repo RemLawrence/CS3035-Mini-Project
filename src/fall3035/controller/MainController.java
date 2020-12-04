@@ -1,13 +1,13 @@
-package fall3035.controller;
+package fall3035.Controller;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import fall3035.model.Task;
-import fall3035.view.CalendarPane;
-import fall3035.view.ItemPane;
-import fall3035.view.CalendarPane.Cell;
+import fall3035.Model.Task;
+import fall3035.View.CalendarPane;
+import fall3035.View.ItemPane;
+import fall3035.View.CalendarPane.Cell;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,7 +62,7 @@ public class MainController extends BaseController implements Initializable {
             if (node instanceof Cell && node.getOnMouseClicked() == null) {
                 node.setOnMouseClicked(e -> {
                     stage.setUserData(node.getUserData());
-                    loadView("/fall3035/view/TaskList.fxml", stage, model);
+                    loadView("/fall3035/View/TaskList.fxml", stage, model);
                 });
             }
         }

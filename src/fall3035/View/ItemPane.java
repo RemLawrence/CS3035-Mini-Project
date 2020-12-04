@@ -1,4 +1,4 @@
-package fall3035.view;
+package fall3035.View;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;

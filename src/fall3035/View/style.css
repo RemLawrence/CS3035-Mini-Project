@@ -1,5 +1,5 @@
 .root {
-	-fx-background-image: url("../res/bg.png");
+	-fx-background-image: url("../images/bg.png");
 	-fx-background-size: cover;
 	-fx-text-fill: #000000;
 	-fx-font-family: "KaiTi";
@@ -7,7 +7,7 @@
 	-fx-font-size: 16px;
 }
 #splash {
-	-fx-background-image: url("../res/splash.png");
+	-fx-background-image: url("../images/splash.png");
 	-fx-background-size: cover;
 }
 

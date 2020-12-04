@@ -1,4 +1,4 @@
-package fall3035.controller;
+package fall3035.Controller;
 
 import java.net.URL;
 import java.text.DateFormat;
@@ -7,8 +7,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import fall3035.model.Task;
-import fall3035.view.ItemPane;
+import fall3035.Model.Task;
+import fall3035.View.ItemPane;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -94,7 +94,7 @@ public class TaskListController extends BaseController implements Initializable 
 			});
             itemPane.setOnMouseClicked(e-> {
                     stage.setUserData(task);
-                    loadView("/fall3035/view/TaskModify.fxml", stage, model);
+                    loadView("/fall3035/View/TaskModify.fxml", stage, model);
             });
             content.getChildren().add(itemPane);
         }

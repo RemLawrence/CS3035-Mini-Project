@@ -1,11 +1,11 @@
-package fall3035.controller;
+package fall3035.Controller;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-import fall3035.model.Task;
+import fall3035.Model.Task;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,7 +63,7 @@ public class TaskModifyController extends BaseController implements Initializabl
     	dp1.setConverter(converter);
     	dp2.setConverter(converter);
 
-        toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/res/off.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
+        toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/off.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
         toggle.setPrefWidth(55);
         toggle.setPrefHeight(50);
         toggle.selectedProperty().addListener((observable, oldValue, newValue) -> {
@@ -72,9 +72,9 @@ public class TaskModifyController extends BaseController implements Initializabl
                 return;
             }
             if (newValue) {
-                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/res/on.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
+                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/on.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
             } else {
-                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/res/off.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
+                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/off.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
             }
         });
         choiceBox.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9));

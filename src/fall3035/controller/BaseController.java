@@ -1,8 +1,8 @@
-package fall3035.controller;
+package fall3035.Controller;
 
 import java.io.IOException;
 
-import fall3035.model.Model;
+import fall3035.Model.Model;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -69,12 +69,12 @@ public class BaseController {
 
     @FXML
     public void add() {
-        loadView("/fall3035/view/TaskAdd.fxml", stage, model);
+        loadView("/fall3035/View/TaskAdd.fxml", stage, model);
     }
 
     @FXML
     public void search() {
-        loadView("/fall3035/view/TaskSearch.fxml", stage, model);
+        loadView("/fall3035/View/TaskSearch.fxml", stage, model);
     }
 
     @FXML
@@ -84,16 +84,16 @@ public class BaseController {
 
     @FXML
     public void about() {
-        loadView("/fall3035/view/about.fxml", stage, model);
+        loadView("/fall3035/View/about.fxml", stage, model);
     }
 
     @FXML
     public void help() {
-        loadView("/fall3035/view/help.fxml", stage, model);
+        loadView("/fall3035/View/help.fxml", stage, model);
     }
 
     @FXML
     public void back() {
-        loadView("/fall3035/view/Main.fxml", stage, model);
+        loadView("/fall3035/View/Main.fxml", stage, model);
     }
 }

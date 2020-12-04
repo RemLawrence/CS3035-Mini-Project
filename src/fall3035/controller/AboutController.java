@@ -1,4 +1,4 @@
-package fall3035.controller;
+package fall3035.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;

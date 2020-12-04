@@ -1,4 +1,4 @@
-package fall3035.view;
+package fall3035.View;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -141,6 +141,7 @@ public class CalendarPane extends VBox {
 
 		public Cell(String text, String day) {
 			this.day = day;
+			//date
 			label = new Label(text);
 			label.setFont(Font.font(null, FontWeight.BOLD, 12));
 			label.setPrefWidth(CELL_WIDTH);
@@ -148,11 +149,12 @@ public class CalendarPane extends VBox {
 			
 			setUserData(day);
 			setMinHeight(50);
-			Border b = new Border(new BorderStroke(Color.valueOf("#fb0"),
+			Border b = new Border(new BorderStroke(Color.valueOf("#fb9"),
 					BorderStrokeStyle.SOLID, CornerRadii.EMPTY,
 					BorderWidths.DEFAULT));
 			setBorder(b);
 			getChildren().add(label);
+
 			if (day.equals(sdf.format(new Date()))) {
 				Background background = new Background(new BackgroundFill(
 						Color.valueOf("#fb0"), null, null));

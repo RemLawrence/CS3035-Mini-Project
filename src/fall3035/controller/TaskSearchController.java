@@ -1,11 +1,11 @@
-package fall3035.controller;
+package fall3035.Controller;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import fall3035.model.Task;
-import fall3035.view.ItemPane;
+import fall3035.Model.Task;
+import fall3035.View.ItemPane;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

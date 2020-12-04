@@ -10,11 +10,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox id="splash" fx:id="content" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.controller.SplashController">
+<VBox id="splash" fx:id="content" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.SplashController">
    <children>
-      <Text fx:id="text" stroke="#7a4949" strokeType="OUTSIDE" text="WELCOME">
+      <Text fx:id="text" stroke="#7a4949" strokeType="OUTSIDE" text="Welcome to The Calendar App!">
          <font>
-            <Font name="System Bold" size="43.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
          <fill>
             <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">

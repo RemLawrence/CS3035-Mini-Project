@@ -1,4 +1,4 @@
-package fall3035.model;
+package fall3035.Model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -168,7 +168,4 @@ public class Model {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Model().search(0, null));
-    }
 }

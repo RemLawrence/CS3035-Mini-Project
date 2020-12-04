@@ -1,4 +1,4 @@
-package fall3035.model;
+package fall3035.Model;
 
 public class Task {
     private int id;
