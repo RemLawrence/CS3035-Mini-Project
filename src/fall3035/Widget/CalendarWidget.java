@@ -104,7 +104,9 @@ public class CalendarWidget extends VBox {
 					}
 					EventWidget eventWidget = new EventWidget(title);
 					eventWidget.getText().setFont(Font.font("", FontWeight.BOLD, 12));
-					eventWidget.getText().setFill(Paint.valueOf("#008080"));
+
+					// TODO: Add color according to its event type
+					//eventWidget.getText().setFill(Paint.valueOf("#008080"));
 					eventWidget.getText().setWrappingWidth(88);
 					eventWidget.setPrefWidth(CELL_LENGTH);
 					c.getChildren().add(eventWidget);
