@@ -6,11 +6,11 @@
 
 <VBox fx:id="content"
       prefHeight="500.0" prefWidth="560.0"
-      stylesheets="@../CSS/menu.css"
       xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="fall3035.Controller.TaskListController">
-   <BorderPane prefWidth="200.0">
+
+   <BorderPane prefWidth="200.0" stylesheets="@../CSS/menu.css">
       <center>
          <MenuBar BorderPane.alignment="CENTER">
             <Menu id="add" mnemonicParsing="false" text="Add">
@@ -36,7 +36,7 @@
       <padding>
          <Insets left="20.0" right="20.0"/>
       </padding>
-      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="To-do List Page"
+      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Event List" stylesheets="@../CSS/title.css"
              VBox.vgrow="ALWAYS"/>
       <Label fx:id="lb_day" alignment="CENTER" maxWidth="1.7976931348623157E308" text="--"/>
       <Label text="Reminder for today"/>

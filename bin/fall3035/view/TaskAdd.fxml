@@ -6,12 +6,11 @@
 
 <VBox fx:id="content"
       prefHeight="500.0" prefWidth="560.0"
-      stylesheets="@../CSS/menu.css"
       xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="fall3035.Controller.TaskAddController">
 
-   <BorderPane prefWidth="200.0">
+   <BorderPane prefWidth="200.0" stylesheets="@../CSS/menu.css">
       <right>
          <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER"/>
       </right>
@@ -34,11 +33,11 @@
       </center>
    </BorderPane>
 
-   <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS">
+   <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS" stylesheets="@../CSS/title.css">
       <padding>
          <Insets left="20.0" right="20.0"/>
       </padding>
-      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Creation Page"
+      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Create Task"
              VBox.vgrow="ALWAYS"/>
       <Label text="Prefer Date * :"/>
       <DatePicker fx:id="dp1" editable="false"/>
