@@ -8,6 +8,27 @@
     -fx-opacity: 0.6
 }
 
+.menu-bar#addAppointment {
+    -fx-background-color: purple;
+    -fx-opacity: 0.6
+}
+
+.menu-bar#addHoliday {
+    -fx-background-color: darkgreen;
+    -fx-opacity: 0.6
+}
+
+.menu-bar#addBirthday {
+    -fx-background-color: red;
+    -fx-opacity: 0.6
+}
+
+.menu-bar#addOther {
+    -fx-background-color: black;
+    -fx-opacity: 0.6
+}
+
+
 .menu {
     -fx-background-color: whitesmoke;
 }

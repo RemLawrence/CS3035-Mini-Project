@@ -63,6 +63,26 @@ public class BaseController {
     }
 
     @FXML
+    public void addAppointment() {
+        loadView("/fall3035/View/CreateAppointment.fxml", stage, model);
+    }
+
+    @FXML
+    public void addHoliday() {
+        loadView("/fall3035/View/CreateHoliday.fxml", stage, model);
+    }
+
+    @FXML
+    public void addBirthday() {
+        loadView("/fall3035/View/CreateBirthday.fxml", stage, model);
+    }
+
+    @FXML
+    public void addOther() {
+        loadView("/fall3035/View/CreateOther.fxml", stage, model);
+    }
+
+    @FXML
     public void about() {
         loadView("/fall3035/View/about.fxml", stage, model);
     }

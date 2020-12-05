@@ -12,10 +12,10 @@
     <MenuBar stylesheets="@../CSS/menu.css">
         <Menu id="add" mnemonicParsing="false" text="Add">
             <MenuItem id="task" mnemonicParsing="false" onAction="#addTask" text="Task"/>
-            <MenuItem id="appointment" mnemonicParsing="false" onAction="#addTask" text="Appointment"/>
-            <MenuItem id="holiday" mnemonicParsing="false" onAction="#addTask" text="Holiday"/>
-            <MenuItem id="birthday" mnemonicParsing="false" onAction="#addTask" text="Birthday"/>
-            <MenuItem id="other" mnemonicParsing="false" onAction="#addTask" text="Other"/>
+            <MenuItem id="appointment" mnemonicParsing="false" onAction="#addAppointment" text="Appointment"/>
+            <MenuItem id="holiday" mnemonicParsing="false" onAction="#addHoliday" text="Holiday"/>
+            <MenuItem id="birthday" mnemonicParsing="false" onAction="#addBirthday" text="Birthday"/>
+            <MenuItem id="other" mnemonicParsing="false" onAction="#addOther" text="Other"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
             <MenuItem mnemonicParsing="false" onAction="#help" text="Help"/>
