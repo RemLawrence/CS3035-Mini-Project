@@ -32,15 +32,17 @@
          <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER"/>
       </right>
    </BorderPane>
+
    <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS">
       <padding>
          <Insets left="20.0" right="20.0"/>
       </padding>
       <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Modify Task" VBox.vgrow="ALWAYS" stylesheets="@../CSS/title.css"/>
+      <Label text="Task Name (i.e CS3035 Assignment 3):"/>
+      <TextField fx:id="taskName" prefHeight="20.0" prefWidth="100.0"/>
       <Label text="Prefer Date * :"/>
       <DatePicker fx:id="dp1" editable="false"/>
-      <Label text="Description * :"/>
-      <TextArea fx:id="description" prefHeight="100.0" prefWidth="200.0" wrapText="true"/>
+
       <GridPane>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -55,6 +57,7 @@
          <Label text="Allow Notification:" GridPane.columnIndex="1"/>
          <ToggleButton fx:id="toggle" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
       </GridPane>
+
       <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="10.0">
          <VBox.margin>
             <Insets/>
@@ -65,11 +68,13 @@
          <Label text="Priority:"/>
          <ChoiceBox fx:id="choiceBox" prefWidth="150.0"/>
       </HBox>
+
       <VBox alignment="CENTER" prefWidth="100.0">
          <VBox.margin>
             <Insets top="30.0"/>
          </VBox.margin>
          <Button mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="120.0" text="Save"/>
       </VBox>
+
    </VBox>
 </VBox>

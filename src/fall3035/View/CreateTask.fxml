@@ -39,10 +39,10 @@
       </padding>
       <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Create Task"
              VBox.vgrow="ALWAYS"/>
-      <Label text="Prefer Date * :"/>
+      <Label text="Task Name (i.e CS3035 Assignment 3):"/>
+      <TextField fx:id="taskName" prefHeight="20.0" prefWidth="100.0"/>
+      <Label text="Prefer Date:"/>
       <DatePicker fx:id="dp1" editable="false"/>
-      <Label text="Description * :"/>
-      <TextArea fx:id="description" prefHeight="100.0" prefWidth="200.0" wrapText="true"/>
 
       <GridPane>
          <columnConstraints>

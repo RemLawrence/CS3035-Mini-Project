@@ -9,10 +9,7 @@ import fall3035.Model.Task;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -29,7 +26,7 @@ public class ModifyTaskController extends BaseController implements Initializabl
     @FXML
     DatePicker dp1;
     @FXML
-    TextArea description;
+    TextField taskName;
     @FXML
     DatePicker dp2;
     @FXML
@@ -84,7 +81,7 @@ public class ModifyTaskController extends BaseController implements Initializabl
         if (task.getDeadlineDate() != null) {
             dp2.setValue(LocalDate.parse(task.getDeadlineDate()));
         }
-        description.setText(task.getDescription());
+        taskName.setText(task.getDescription());
         choiceBox.getSelectionModel().select(task.getPriority()-1);
         toggle.selectedProperty().set(task.isNotification());
     }
@@ -96,7 +93,7 @@ public class ModifyTaskController extends BaseController implements Initializabl
             showAlert("PreferDate can not be empty!");
             return;
         }
-        String desc = description.getText();
+        String desc = taskName.getText();
         if (desc.isEmpty()) {
             showAlert("Description can not be empty!");
             return;
