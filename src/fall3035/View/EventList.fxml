@@ -4,16 +4,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="500.0" prefWidth="560.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.TaskListController">
+<VBox fx:id="content"
+      prefHeight="500.0" prefWidth="560.0"
+      stylesheets="@../CSS/menu.css"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fall3035.Controller.TaskListController">
    <BorderPane prefWidth="200.0">
       <center>
          <MenuBar BorderPane.alignment="CENTER">
-            <Menu mnemonicParsing="false" text="Action">
-               <MenuItem mnemonicParsing="false" onAction="#addTask" text="Add New Yask"/>
-               <MenuItem mnemonicParsing="false" onAction="#search" text="Search Task"/>
-               <MenuItem mnemonicParsing="false" onAction="#close" text="Exit"/>
+            <Menu id="add" mnemonicParsing="false" text="Add">
+               <MenuItem id="task" mnemonicParsing="false" onAction="#addTask" text="Task"/>
+               <MenuItem id="appointment" mnemonicParsing="false" onAction="#addTask" text="Appointment"/>
+               <MenuItem id="holiday" mnemonicParsing="false" onAction="#addTask" text="Holiday"/>
+               <MenuItem id="birthday" mnemonicParsing="false" onAction="#addTask" text="Birthday"/>
+               <MenuItem id="other" mnemonicParsing="false" onAction="#addTask" text="Other"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
                <MenuItem mnemonicParsing="false" onAction="#help" text="Help"/>

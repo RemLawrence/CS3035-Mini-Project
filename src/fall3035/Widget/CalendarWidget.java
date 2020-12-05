@@ -36,7 +36,7 @@ public class CalendarWidget extends VBox {
 
 	public CalendarWidget() {
 		setPrefWidth(USE_PREF_SIZE);
-		setStyle("-fx-background-color: lightblue");
+		setStyle("-fx-background-color: white");
 		setAlignment(Pos.CENTER);
 
 		calendar = Calendar.getInstance();
@@ -60,38 +60,29 @@ public class CalendarWidget extends VBox {
 
 			setUserData(day);
 			setMinHeight(50);
-			Border b = new Border(new BorderStroke(Color.valueOf("#fb9"),
-					BorderStrokeStyle.SOLID, CornerRadii.EMPTY,
-					BorderWidths.DEFAULT));
-			setBorder(b);
+
+			Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.DOTTED, CornerRadii.EMPTY, BorderWidths.DEFAULT));
+			setBorder(border);
 			getChildren().add(label);
 
 			if (day.equals(sdf.format(new Date()))) {
-				Background background = new Background(new BackgroundFill(
-						Color.valueOf("#fb0"), null, null));
-				setBackground(background);
+				setStyle("-fx-background-color: lightblue");
 			}
 
 			setOnMouseEntered(new EventHandler<Event>() {
-
 				@Override
 				public void handle(Event paramT) {
-					Background background = new Background(new BackgroundFill(
-							Color.valueOf("ffbb008a"), null, null));
-					setBackground(background);
+					setStyle("-fx-background-color: lightcyan");
 				}
 			});
-			setOnMouseExited(new EventHandler<Event>() {
 
+			setOnMouseExited(new EventHandler<Event>() {
 				@Override
 				public void handle(Event paramT) {
 					if (!day.equals(sdf.format(new Date()))) {
-						Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, null, null));
-						setBackground(background);
+						setStyle("-fx-background-color: white");
 					} else {
-						Background background = new Background(new BackgroundFill(
-								Color.valueOf("#fb0"), null, null));
-						setBackground(background);
+						setStyle("-fx-background-color: lightblue");
 					}
 				}
 			});
@@ -99,8 +90,8 @@ public class CalendarWidget extends VBox {
 	}
 
 	public EventWidget addTodo(String day, String title) {
-		ObservableList<Node> cells = ((GridPane) getChildren().get(0))
-				.getChildren();
+		ObservableList<Node> cells = ((GridPane) getChildren().get(0)).getChildren();
+
 		for (Node node : cells) {
 			if (node instanceof CalendarCell) {
 				CalendarCell c = (CalendarCell) node;
@@ -112,8 +103,7 @@ public class CalendarWidget extends VBox {
 						title = title.substring(0, 16) + "..";
 					}
 					EventWidget eventWidget = new EventWidget(title);
-					eventWidget.getText().setFont(
-							Font.font("", FontWeight.BOLD, 11));
+					eventWidget.getText().setFont(Font.font("", FontWeight.BOLD, 12));
 					eventWidget.getText().setFill(Paint.valueOf("#008080"));
 					eventWidget.getText().setWrappingWidth(88);
 					eventWidget.setPrefWidth(CELL_LENGTH);
@@ -152,7 +142,7 @@ public class CalendarWidget extends VBox {
 			}
 			VBox vBox = new VBox(label);
 			vBox.setPrefHeight(40);
-			Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, null, null));
+			Background background = new Background(new BackgroundFill(Color.WHITE, null, null));
 			vBox.setBackground(background);
 			vBox.setAlignment(Pos.CENTER);
 //			GridPane.setHgrow(vBox, Priority.ALWAYS);

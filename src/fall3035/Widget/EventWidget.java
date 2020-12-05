@@ -44,29 +44,28 @@ public class EventWidget extends HBox {
     }
 
 	public void addMouseStyle() {
-		setOnMouseEntered(new EventHandler<Event>() {
 
+		setOnMouseEntered(new EventHandler<Event>() {
 			@Override
 			public void handle(Event paramT) {
-				Background background = new Background(new BackgroundFill(
-						Color.valueOf("ffbb008a"), null, null));
-				setBackground(background);
+                setStyle("-fx-background-color: lightblue");
 			}
 		});
-		setOnMouseExited(new EventHandler<Event>() {
 
+		setOnMouseExited(new EventHandler<Event>() {
 			@Override
 			public void handle(Event paramT) {
-					Background background = new Background(new BackgroundFill(
-							Color.valueOf("#fff"), null, null));
-					setBackground(background);
+                setStyle("-fx-background-color: white");
 			}
 		});
 	}
 
 	public Button delete(){
         Button delete = new Button("x");
+        delete.setPrefSize(1,1);
+        delete.setStyle("-fx-text-fill: red");
         delete.setId("delete");
+
         getChildren().add(delete);
 
         return delete;

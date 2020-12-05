@@ -4,13 +4,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="fall3035.Controller.MainController">
+<VBox prefHeight="500.0" prefWidth="800.0"
+      stylesheets="@../CSS/menu.css"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fall3035.Controller.MainController">
+
     <MenuBar>
-        <Menu mnemonicParsing="false" text="Add">
-            <MenuItem mnemonicParsing="false" onAction="#addTask" text="Task"/>
-            <MenuItem mnemonicParsing="false" onAction="#search" text="Appointment"/>
-            <MenuItem mnemonicParsing="false" onAction="#close" text="Exit"/>
+        <Menu id="add" mnemonicParsing="false" text="Add">
+            <MenuItem id="task" mnemonicParsing="false" onAction="#addTask" text="Task"/>
+            <MenuItem id="appointment" mnemonicParsing="false" onAction="#addTask" text="Appointment"/>
+            <MenuItem id="holiday" mnemonicParsing="false" onAction="#addTask" text="Holiday"/>
+            <MenuItem id="birthday" mnemonicParsing="false" onAction="#addTask" text="Birthday"/>
+            <MenuItem id="other" mnemonicParsing="false" onAction="#addTask" text="Other"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
             <MenuItem mnemonicParsing="false" onAction="#help" text="Help"/>
@@ -19,10 +25,12 @@
             <MenuItem mnemonicParsing="false" onAction="#about" text="About"/>
         </Menu>
     </MenuBar>
+
     <ScrollPane fx:id="content" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
-    <BorderPane>
+
+    <BorderPane style="-fx-base: lightcyan">
         <left>
-            <Button mnemonicParsing="false" onAction="#previous" text="Previous">
+            <Button mnemonicParsing="false" onAction="#previous" text="Previous Month">
                 <BorderPane.margin>
                     <Insets bottom="400.0"/>
                     <Insets left="250.0"/>
@@ -30,7 +38,7 @@
             </Button>
         </left>
         <right>
-          <Button mnemonicParsing="false" onAction="#next" text="Next">
+          <Button mnemonicParsing="false" onAction="#next" text="Next Month">
               <BorderPane.margin>
                   <Insets bottom="400.0"/>
                   <Insets right="250.0"/>

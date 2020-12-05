@@ -61,7 +61,7 @@ public class MainController extends BaseController implements Initializable {
             if (node instanceof CalendarWidget.CalendarCell && node.getOnMouseClicked() == null) {
                 node.setOnMouseClicked(e -> {
                     stage.setUserData(node.getUserData());
-                    loadView("/fall3035/View/TaskList.fxml", stage, model);
+                    loadView("/fall3035/View/EventList.fxml", stage, model);
                 });
             }
         }

@@ -62,16 +62,6 @@ public class BaseController {
     }
 
     @FXML
-    public void search() {
-        loadView("/fall3035/View/TaskSearch.fxml", stage, model);
-    }
-
-    @FXML
-    public void close() {
-        System.exit(0);
-    }
-
-    @FXML
     public void about() {
         loadView("/fall3035/View/about.fxml", stage, model);
     }
