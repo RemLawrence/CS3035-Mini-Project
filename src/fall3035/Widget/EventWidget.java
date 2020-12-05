@@ -64,7 +64,7 @@ public class EventWidget extends HBox {
 	public Button delete(){
         // TODO: Make this delete button more natural
         Button delete = new Button("x");
-        delete.setPrefSize(1,1);
+        delete.setPrefSize(10,10);
         delete.setStyle("-fx-text-fill: red");
         delete.setId("delete");
 
