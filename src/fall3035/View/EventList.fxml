@@ -8,7 +8,7 @@
       prefHeight="500.0" prefWidth="560.0"
       xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="fall3035.Controller.TaskListController">
+      fx:controller="fall3035.Controller.EventListController">
 
    <BorderPane prefWidth="200.0" stylesheets="@../CSS/menu.css">
       <center>
@@ -32,6 +32,7 @@
          <Button mnemonicParsing="false" onAction="#back" text="Calendar" BorderPane.alignment="CENTER"/>
       </right>
    </BorderPane>
+
    <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS">
       <padding>
          <Insets left="20.0" right="20.0"/>

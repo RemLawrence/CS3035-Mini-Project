@@ -30,6 +30,7 @@ public class BaseController {
     public static void loadView(String fxml, Stage stage, Model model) {
         Parent root = null;
         try {
+            System.out.println(fxml);
             root = FXMLLoader.load(BaseController.class.getResource(fxml), null, null, c -> {
                 try {
                     BaseController controller = (BaseController) c.newInstance();
@@ -58,7 +59,7 @@ public class BaseController {
 
     @FXML
     public void addTask() {
-        loadView("/fall3035/View/TaskAdd.fxml", stage, model);
+        loadView("/fall3035/View/CreateTask.fxml", stage, model);
     }
 
     @FXML

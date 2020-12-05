@@ -8,14 +8,11 @@
       prefHeight="500.0" prefWidth="560.0"
       xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="fall3035.Controller.TaskAddController">
+      fx:controller="fall3035.Controller.ModifyTaskController">
 
    <BorderPane prefWidth="200.0" stylesheets="@../CSS/menu.css">
-      <right>
-         <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER"/>
-      </right>
       <center>
-         <MenuBar BorderPane.alignment="CENTER">
+         <MenuBar id="addTask" BorderPane.alignment="CENTER">
             <Menu id="add" mnemonicParsing="false" text="Add">
                <MenuItem id="task" mnemonicParsing="false" onAction="#addTask" text="Task"/>
                <MenuItem id="appointment" mnemonicParsing="false" onAction="#addTask" text="Appointment"/>
@@ -31,14 +28,15 @@
             </Menu>
          </MenuBar>
       </center>
+      <right>
+         <Button mnemonicParsing="false" onAction="#back" text="Back" BorderPane.alignment="CENTER"/>
+      </right>
    </BorderPane>
-
-   <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS" stylesheets="@../CSS/title.css">
+   <VBox prefHeight="262.0" prefWidth="560.0" spacing="10.0" VBox.vgrow="ALWAYS">
       <padding>
          <Insets left="20.0" right="20.0"/>
       </padding>
-      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Create Task"
-             VBox.vgrow="ALWAYS"/>
+      <Label id="title" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Modify Task" VBox.vgrow="ALWAYS" stylesheets="@../CSS/title.css"/>
       <Label text="Prefer Date * :"/>
       <DatePicker fx:id="dp1" editable="false"/>
       <Label text="Description * :"/>

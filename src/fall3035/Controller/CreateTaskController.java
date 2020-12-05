@@ -20,7 +20,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 
-public class TaskModifyController extends BaseController implements Initializable {
+public class CreateTaskController extends BaseController implements Initializable {
 
     @FXML
     VBox content;
@@ -35,7 +35,6 @@ public class TaskModifyController extends BaseController implements Initializabl
     @FXML
     ChoiceBox<Integer> choiceBox;
 
-    Task task;
 
     StringConverter<LocalDate> converter = new StringConverter<LocalDate>() {
     	DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -78,15 +77,7 @@ public class TaskModifyController extends BaseController implements Initializabl
 //            }
         });
         choiceBox.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9));
-
-        task = ((Task)stage.getUserData());
-        dp1.setValue(LocalDate.parse(task.getPreferDate()));
-        if (task.getDeadlineDate() != null) {
-            dp2.setValue(LocalDate.parse(task.getDeadlineDate()));
-        }
-        description.setText(task.getDescription());
-        choiceBox.getSelectionModel().select(task.getPriority()-1);
-        toggle.selectedProperty().set(task.isNotification());
+        choiceBox.getSelectionModel().select(0);
     }
 
     @FXML
@@ -109,15 +100,12 @@ public class TaskModifyController extends BaseController implements Initializabl
             showAlert("DeadlineDate must more than PreferDate");
             return;
         }
-
-        Task modifyTask = new Task(preferDate.toString(), deadlineDate, desc, isNotification, priority);
-        modifyTask.setId(task.getId());
-
-        if(model.update(modifyTask)){
-            showAlert("Modify Success!");
+        Task task = new Task(preferDate.toString(), deadlineDate, desc, isNotification, priority);
+        if(model.add(task)){
+            showAlert("Add Success!");
             back();
         }else {
-            showAlert("Modify Fail!");
+            showAlert("Add Fail!");
         }
 
     }
