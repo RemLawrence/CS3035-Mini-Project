@@ -94,7 +94,7 @@ public class EventListController extends BaseController implements Initializable
 			});
             eventWidget.setOnMouseClicked(e-> {
                     stage.setUserData(task);
-                    loadView("/fall3035/View/TaskModify.fxml", stage, model);
+                    loadView("/fall3035/View/ModifyTask.fxml", stage, model);
             });
             content.getChildren().add(eventWidget);
         }
