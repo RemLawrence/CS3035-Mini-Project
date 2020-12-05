@@ -25,13 +25,13 @@
         </Menu>
     </MenuBar>
 
-    <ScrollPane fx:id="content" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+    <ScrollPane fx:id="content" prefWidth="150.0" VBox.vgrow="ALWAYS"/>
 
     <BorderPane style="-fx-base: lightcyan">
         <left>
             <Button mnemonicParsing="false" onAction="#previous" text="Previous Month">
                 <BorderPane.margin>
-                    <Insets bottom="400.0"/>
+                    <Insets bottom="100.0"/>
                     <Insets left="250.0"/>
                 </BorderPane.margin>
             </Button>
@@ -39,7 +39,7 @@
         <right>
           <Button mnemonicParsing="false" onAction="#next" text="Next Month">
               <BorderPane.margin>
-                  <Insets bottom="400.0"/>
+                  <Insets bottom="100.0"/>
                   <Insets right="250.0"/>
               </BorderPane.margin>
           </Button>
