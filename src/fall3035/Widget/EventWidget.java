@@ -34,6 +34,7 @@ public class EventWidget extends HBox {
             e.setFill(Color.valueOf("#8B4513"));
 			getChildren().add(e);
         }
+        // TODO: Add color to the string according to its event type
         text.setText(str);
         getChildren().add(text);
         if (hasCheckBox) {
