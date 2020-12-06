@@ -17,16 +17,16 @@ public class ModifyTaskController extends BaseController implements Initializabl
 
     @FXML
     VBox content;
-    @FXML
-    ToggleButton toggle;
+//    @FXML
+//    ToggleButton toggle;
     @FXML
     DatePicker dp1;
     @FXML
     TextField taskName;
     @FXML
     DatePicker dp2;
-    @FXML
-    ChoiceBox<Integer> choiceBox;
+//    @FXML
+//    ChoiceBox<Integer> choiceBox;
 
     Task task;
 
@@ -57,20 +57,20 @@ public class ModifyTaskController extends BaseController implements Initializabl
     	dp2.setConverter(converter);
 
         //toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/off.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
-        toggle.setPrefWidth(55);
-        toggle.setPrefHeight(50);
-        toggle.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            if (dp2.getValue() == null) {
-                showAlert("Notification can not be change when deadlineDate is empty!");
-                return;
-            }
-//            if (newValue) {
-//                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/on.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
-//            } else {
-//                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/off.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
+//        toggle.setPrefWidth(55);
+//        toggle.setPrefHeight(50);
+//        toggle.selectedProperty().addListener((observable, oldValue, newValue) -> {
+//            if (dp2.getValue() == null) {
+//                showAlert("Notification can not be change when deadlineDate is empty!");
+//                return;
 //            }
-        });
-        choiceBox.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+////            if (newValue) {
+////                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/on.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
+////            } else {
+////                toggle.setBackground(new Background(new BackgroundImage(new Image("/fall3035/images/off.png"), null, null, null, new BackgroundSize(50, 45, true, true, true, true))));
+////            }
+//        });
+        //choiceBox.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9));
 
         task = ((Task)stage.getUserData());
         dp1.setValue(LocalDate.parse(task.getPreferDate()));
@@ -78,8 +78,8 @@ public class ModifyTaskController extends BaseController implements Initializabl
             dp2.setValue(LocalDate.parse(task.getDeadlineDate()));
         }
         taskName.setText(task.getDescription());
-        choiceBox.getSelectionModel().select(task.getPriority()-1);
-        toggle.selectedProperty().set(task.isNotification());
+        //choiceBox.getSelectionModel().select(task.getPriority()-1);
+        //toggle.selectedProperty().set(task.isNotification());
     }
 
     @FXML
@@ -94,16 +94,17 @@ public class ModifyTaskController extends BaseController implements Initializabl
             showAlert("Description can not be empty!");
             return;
         }
-        Integer priority = choiceBox.getSelectionModel().getSelectedItem();
+        //Integer priority = choiceBox.getSelectionModel().getSelectedItem();
 
         String deadlineDate = dp2.getValue() == null ? null : dp2.getValue().toString();
-        boolean isNotification = toggle.selectedProperty().get();
+        //boolean isNotification = toggle.selectedProperty().get();
+
         if (deadlineDate != null && preferDate.isAfter(dp2.getValue())) {
             showAlert("DeadlineDate must more than PreferDate");
             return;
         }
 
-        Task modifyTask = new Task(preferDate.toString(), deadlineDate, desc, isNotification, priority);
+        Task modifyTask = new Task(preferDate.toString(), deadlineDate, desc, false, 1,"task");
         modifyTask.setId(task.getId());
 
         if(model.update(modifyTask)){

@@ -10,13 +10,14 @@ public class Task {
     private boolean isNotification;
     private boolean isFinish;
     private int priority;
+    private String type;
 
 
     public Task() {
         super();
     }
 
-    public Task(int id, String preferDate, String deadlineDate, String description, boolean isNotification, boolean isFinish, int priority) {
+    public Task(int id, String preferDate, String deadlineDate, String description, boolean isNotification, boolean isFinish, int priority,String type) {
         super();
         this.id = id;
         this.preferDate = preferDate;
@@ -25,9 +26,10 @@ public class Task {
         this.isNotification = isNotification;
         this.isFinish = isFinish;
         this.priority = priority;
+        this.type=type;
     }
 
-    public Task(String preferDate, String deadlineDate, String description, boolean isNotification, int priority) {
+    public Task(String preferDate, String deadlineDate, String description, boolean isNotification, int priority,String type) {
         super();
         this.preferDate = preferDate;
         this.deadlineDate = deadlineDate;
@@ -92,10 +94,15 @@ public class Task {
         this.priority = priority;
     }
 
+    public String getType() {
+        return type;
+    }
+
+
     @Override
     public String toString() {
         return "Task [id=" + id + ", preferDate=" + preferDate + ", deadlineDate=" + deadlineDate + ", description=" + description + ", isNotification="
-                + isNotification + ", isFinish=" + isFinish + ", priority=" + priority + "]";
+                + isNotification + ", isFinish=" + isFinish + ", priority=" + priority + ", type=" + type +"]";
     }
 
 }

@@ -35,7 +35,7 @@ public class Model {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select * from tasks t");
             while (rs.next()) {
-                Task task = new Task(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), "1".equals(rs.getString(5)), "1".equals(rs.getString(6)), rs.getInt(7));
+                Task task = new Task(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), "1".equals(rs.getString(5)), "1".equals(rs.getString(6)), rs.getInt(7),rs.getString(8));
                 tasks.add(task);
             }
         } catch (SQLException e) {
@@ -95,7 +95,7 @@ public class Model {
     public boolean add(Task task) {
         tasks.add(task);
         try {
-            String sql = "insert into tasks(preferDate,deadlineDate,description,isNotification,isFinish,priority) " + "values (?,?,?,?,?,?)";
+            String sql = "insert into tasks(preferDate,deadlineDate,description,isNotification,isFinish,priority,type) " + "values (?,?,?,?,?,?,?)";
             // String sql =
             // "insert into tasks(preferDate,deadlineDate,description,isNotification,isFinish,priority) "
             // +
@@ -108,6 +108,7 @@ public class Model {
             prepareStatement.setObject(4, task.isNotification());
             prepareStatement.setObject(5, task.isFinish());
             prepareStatement.setObject(6, task.getPriority());
+            prepareStatement.setObject( 7, task.getType());
 
             prepareStatement.execute();
             return true;
@@ -121,7 +122,7 @@ public class Model {
         try {
             // String sql =
             // "update tasks set preferDate='"+task.getPreferDate()+"',deadlineDate='"+task.getDeadlineDate()+"',description='"+task.getDescription()+"',isNotification='"+task.isNotification()+"',isFinish='"+task.isFinish()+"',priority="+task.getPriority()+" where id="+task.getId();
-            String sql = "update tasks set preferDate=?,deadlineDate=?,description=?,isNotification=?,isFinish=?,priority=? where id=?";
+            String sql = "update tasks set preferDate=?,deadlineDate=?,description=?,isNotification=?,isFinish=?,priority=? ,type=? where id=?";
             PreparedStatement prepareStatement = conn.prepareStatement(sql);
             prepareStatement.setObject(1, task.getPreferDate());
             prepareStatement.setObject(2, task.getDeadlineDate());
@@ -129,7 +130,9 @@ public class Model {
             prepareStatement.setObject(4, task.isNotification());
             prepareStatement.setObject(5, task.isFinish());
             prepareStatement.setObject(6, task.getPriority());
-            prepareStatement.setObject(7, task.getId());
+            prepareStatement.setObject( 7, task.getType());
+            prepareStatement.setObject(8, task.getId());
+
             prepareStatement.execute();
             return true;
         } catch (SQLException e) {
@@ -151,7 +154,7 @@ public class Model {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                Task task = new Task(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), "1".equals(rs.getString(5)), "1".equals(rs.getString(6)), rs.getInt(7));
+                Task task = new Task(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), "1".equals(rs.getString(5)), "1".equals(rs.getString(6)), rs.getInt(7),rs.getString(8));
                 tasks.add(task);
             }
         } catch (SQLException e) {

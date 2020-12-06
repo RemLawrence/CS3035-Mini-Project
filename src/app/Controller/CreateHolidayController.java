@@ -98,7 +98,7 @@ public class CreateHolidayController extends BaseController implements Initializ
             showAlert("DeadlineDate must more than PreferDate");
             return;
         }
-        Task task = new Task(preferDate.toString(), deadlineDate, desc, isNotification, priority);
+        Task task = new Task(preferDate.toString(), deadlineDate, desc, false, priority,"holiday");
         if(model.add(task)){
             showAlert("Add Success!");
             back();

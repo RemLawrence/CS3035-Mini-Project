@@ -95,7 +95,7 @@ public class CreateBirthdayController extends BaseController implements Initiali
             showAlert("DeadlineDate must more than PreferDate");
             return;
         }
-        Task task = new Task(preferDate.toString(), deadlineDate, desc, isNotification, priority);
+        Task task = new Task(preferDate.toString(), deadlineDate, desc, false, priority, "birthday");
         if(model.add(task)){
             showAlert("Add Success!");
             back();

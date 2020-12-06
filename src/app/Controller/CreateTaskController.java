@@ -96,7 +96,7 @@ public class CreateTaskController extends BaseController implements Initializabl
             showAlert("DeadlineDate must more than PreferDate");
             return;
         }
-        Task task = new Task(preferDate.toString(), deadlineDate, desc, isNotification, priority);
+        Task task = new Task(preferDate.toString(), deadlineDate, desc, isNotification, priority,"task");
         if(model.add(task)){
             showAlert("Add Success!");
             back();
