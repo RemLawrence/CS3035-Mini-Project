@@ -40,7 +40,7 @@ public class MainController extends BaseController implements Initializable {
     private void update(){
         for (Task task : model.getTasks()) {
 
-            EventWidget addTodo = calendarWidget.addTodo(task.getPreferDate(), task.getDescription());
+            EventWidget addTodo = calendarWidget.addTodo(task.getPreferDate(), task.getDescription(), task.getType());
             if (addTodo != null) {
                 if (task.isFinish()) {
                     addTodo.setStrikethrough(true);
