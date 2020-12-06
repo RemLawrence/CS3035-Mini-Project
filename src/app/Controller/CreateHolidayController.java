@@ -1,13 +1,10 @@
 package app.Controller;
 
 import app.Model.Task;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 
@@ -16,7 +13,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class CreateHolidayController extends BaseController implements Initializable {
+public class CreateHolidayController extends Controller implements Initializable {
     @FXML
     VBox content;
 //    @FXML

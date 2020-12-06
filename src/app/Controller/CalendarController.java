@@ -19,7 +19,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class MainController extends BaseController implements Initializable {
+public class CalendarController extends Controller implements Initializable {
 
     @FXML
     ScrollPane content;

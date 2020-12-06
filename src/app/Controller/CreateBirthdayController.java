@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class CreateBirthdayController extends BaseController implements Initializable {
+public class CreateBirthdayController extends Controller implements Initializable {
     @FXML
     VBox content;
     //    @FXML

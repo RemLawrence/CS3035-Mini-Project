@@ -7,7 +7,7 @@
 <VBox prefHeight="500.0" prefWidth="800.0"
       xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="app.Controller.MainController">
+      fx:controller="app.Controller.CalendarController">
 
     <MenuBar stylesheets="@../CSS/menu.css">
         <Menu id="add" mnemonicParsing="false" text="Add">

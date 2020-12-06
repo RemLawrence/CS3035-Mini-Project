@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-public class SplashController extends BaseController implements Initializable {
+public class SplashController extends Controller implements Initializable {
 
     @FXML
     VBox content;
@@ -27,7 +27,7 @@ public class SplashController extends BaseController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 stage.hide();
-                BaseController.loadView("/app/View/Calendar.fxml",new Stage(), model);
+                Controller.loadView("/app/View/Calendar.fxml",new Stage(), model);
             }
         });
 

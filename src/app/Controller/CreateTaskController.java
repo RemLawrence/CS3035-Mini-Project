@@ -6,14 +6,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import app.Model.Task;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 
-public class CreateTaskController extends BaseController implements Initializable {
+public class CreateTaskController extends Controller implements Initializable {
 
     @FXML
     VBox content;

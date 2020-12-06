@@ -23,7 +23,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Callback;
 
-public class EventListController extends BaseController implements Initializable {
+public class EventListController extends Controller implements Initializable {
 
     @FXML
     VBox contentDay;

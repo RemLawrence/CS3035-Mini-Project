@@ -2,7 +2,7 @@ package app;
 
 import java.util.Locale;
 
-import app.Controller.BaseController;
+import app.Controller.Controller;
 import app.Model.Model;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -16,7 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        BaseController.loadView("/app/View/Splash.fxml",stage, new Model());
+        Controller.loadView("/app/View/Splash.fxml",stage, new Model());
     }
 
 }

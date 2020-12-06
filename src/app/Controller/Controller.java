@@ -11,7 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
-public class BaseController {
+public class Controller {
     Model model;
     Stage stage;
 
@@ -31,9 +31,9 @@ public class BaseController {
         Parent root = null;
         try {
             System.out.println(fxml);
-            root = FXMLLoader.load(BaseController.class.getResource(fxml), null, null, c -> {
+            root = FXMLLoader.load(Controller.class.getResource(fxml), null, null, c -> {
                 try {
-                    BaseController controller = (BaseController) c.newInstance();
+                    Controller controller = (Controller) c.newInstance();
                     controller.setModel(model);
                     controller.setStage(stage);
                     return controller;
