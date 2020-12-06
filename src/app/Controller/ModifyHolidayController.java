@@ -103,7 +103,7 @@ public class ModifyHolidayController extends BaseController implements Initializ
             return;
         }
 
-        Task modifyTask = new Task(preferDate.toString(), deadlineDate, desc, false, 1,"task");
+        Task modifyTask = new Task(preferDate.toString(), deadlineDate, desc, false, 1,"holiday");
         modifyTask.setId(task.getId());
 
         if(model.update(modifyTask)){

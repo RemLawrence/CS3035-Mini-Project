@@ -102,7 +102,7 @@ public class ModifyBirthdayController extends BaseController implements Initiali
             return;
         }
 
-        Task modifyTask = new Task(preferDate.toString(), deadlineDate, desc, false, 1,"task");
+        Task modifyTask = new Task(preferDate.toString(), deadlineDate, desc, false, 1,"birthday");
         modifyTask.setId(task.getId());
 
         if(model.update(modifyTask)){
