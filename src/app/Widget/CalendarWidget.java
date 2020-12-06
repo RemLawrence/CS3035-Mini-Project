@@ -101,7 +101,7 @@ public class CalendarWidget extends VBox {
 					if (title.length() > 16) {
 						title = title.substring(0, 16) + "..";
 					}
-					EventWidget eventWidget = new EventWidget(title);
+					EventWidget eventWidget = new EventWidget(title, "birthday");
 					eventWidget.getText().setFont(Font.font("", FontWeight.BOLD, 12));
 
 					// TODO: Add color according to its event type

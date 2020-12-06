@@ -15,24 +15,53 @@ public class EventWidget extends HBox {
     Text text = new Text();
     CheckBox checkBox = new CheckBox();
 
-    public EventWidget(String text) {
-        this(text, true, false);
+    public EventWidget(String text, String type) {
+        this(text, true, false, type);
     }
 
-    public EventWidget(String text, boolean hasLiStyle) {
-        this(text, hasLiStyle, true);
+    public EventWidget(String text, boolean hasLiStyle, String type) {
+        this(text, hasLiStyle, true, type);
     }
 
-    public EventWidget(String str, boolean hasLiStyle, boolean hasCheckBox) {
+    public EventWidget(String str, boolean hasLiStyle, boolean hasCheckBox, String type) {
         super();
         setAlignment(Pos.CENTER_LEFT);
         if (hasLiStyle) {
             Text e = new Text("\u2022 ");//Unicode code
             e.setFont(new Font(12));
-            e.setFill(Color.valueOf("#8B4513"));
+            if (type.equals("task")){
+                e.setFill(Color.DARKBLUE);
+            }
+            else if (type.equals("holiday")){
+                e.setFill(Color.DARKGREEN);
+            }
+            else if (type.equals("birthday")){
+                e.setFill(Color.RED);
+            }
+            else if (type.equals("other")){
+                e.setFill(Color.BLACK);
+            }
+            else if (type.equals("appointment")){
+                e.setFill(Color.PURPLE);
+            }
 			getChildren().add(e);
         }
         // TODO: Add color to the string according to its event type
+        if (type.equals("task")){
+            text.setFill(Color.DARKBLUE);
+        }
+        else if (type.equals("holiday")){
+            text.setFill(Color.DARKGREEN);
+        }
+        else if (type.equals("birthday")){
+            text.setFill(Color.RED);
+        }
+        else if (type.equals("other")){
+            text.setFill(Color.BLACK);
+        }
+        else if (type.equals("appointment")){
+            text.setFill(Color.PURPLE);
+        }
         text.setText(str);
         getChildren().add(text);
         if (hasCheckBox) {

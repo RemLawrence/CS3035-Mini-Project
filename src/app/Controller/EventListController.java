@@ -60,7 +60,7 @@ public class EventListController extends BaseController implements Initializable
    	 for (int i = 0; i < tasks.size(); i++) {
 
             Task task = tasks.get(i);
-            EventWidget eventWidget = new EventWidget((i + 1) + " . " + task.getDescription(), false);
+            EventWidget eventWidget = new EventWidget((i + 1) + " . " + task.getDescription(), false, task.getType());
             Background background = new Background(new BackgroundFill(Color.valueOf("#fff"), null, null));
             eventWidget.setBackground(background);
             eventWidget.addMouseStyle();
