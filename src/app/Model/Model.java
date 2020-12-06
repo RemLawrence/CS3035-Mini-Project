@@ -22,7 +22,7 @@ public class Model {
 
     public Model() {
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:domainObj.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:Event.db");
         } catch (SQLException e) {
             e.printStackTrace();
         }
