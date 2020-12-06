@@ -21,7 +21,7 @@ public class CreateBirthdayController extends BaseController implements Initiali
     @FXML
     DatePicker dp1;
     @FXML
-    TextField holidayName;
+    TextField birthdayName;
     @FXML
     DatePicker dp2;
 //    @FXML
@@ -79,7 +79,7 @@ public class CreateBirthdayController extends BaseController implements Initiali
             showAlert("PreferDate can not be empty!");
             return;
         }
-        String desc = holidayName.getText();
+        String desc = birthdayName.getText();
         if (desc.isEmpty()) {
             showAlert("Description can not be empty!");
             return;

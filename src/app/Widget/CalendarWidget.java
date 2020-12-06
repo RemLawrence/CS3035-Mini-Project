@@ -88,7 +88,7 @@ public class CalendarWidget extends VBox {
 		}
 	}
 
-	public EventWidget addTodo(String day, String title) {
+	public EventWidget addTodo(String day, String title, String type) {
 		ObservableList<Node> cells = ((GridPane) getChildren().get(0)).getChildren();
 
 		for (Node node : cells) {
@@ -101,7 +101,7 @@ public class CalendarWidget extends VBox {
 					if (title.length() > 16) {
 						title = title.substring(0, 16) + "..";
 					}
-					EventWidget eventWidget = new EventWidget(title);
+					EventWidget eventWidget = new EventWidget(title, type);
 					eventWidget.getText().setFont(Font.font("", FontWeight.BOLD, 12));
 
 					// TODO: Add color according to its event type
