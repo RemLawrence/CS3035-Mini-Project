@@ -36,6 +36,7 @@ public class Task {
         this.description = description;
         this.isNotification = isNotification;
         this.priority = priority;
+        this.type=type;
     }
 
     public int getId() {

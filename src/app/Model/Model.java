@@ -36,11 +36,13 @@ public class Model {
             ResultSet rs = st.executeQuery("select * from tasks t");
             while (rs.next()) {
                 Task task = new Task(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), "1".equals(rs.getString(5)), "1".equals(rs.getString(6)), rs.getInt(7),rs.getString(8));
+                System.out.println("tsk type in rs"+ task.getType());
                 tasks.add(task);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return tasks;
     }
 
@@ -109,12 +111,15 @@ public class Model {
             prepareStatement.setObject(5, task.isFinish());
             prepareStatement.setObject(6, task.getPriority());
             prepareStatement.setObject( 7, task.getType());
+            System.out.println("type "+ task.getType());
 
             prepareStatement.execute();
+            prepareStatement.close();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return false;
     }
 
@@ -134,6 +139,7 @@ public class Model {
             prepareStatement.setObject(8, task.getId());
 
             prepareStatement.execute();
+            prepareStatement.close();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
