@@ -74,7 +74,7 @@
             <VBox.margin>
                 <Insets top="30.0"/>
             </VBox.margin>
-            <Button mnemonicParsing="false" onAction="#save" prefHeight="20.0" prefWidth="120.0" text="Add"/>
+            <Button mnemonicParsing="false" onAction="#save" prefHeight="20.0" prefWidth="120.0" text="Save"/>
         </VBox>
 
     </VBox>
