@@ -55,12 +55,7 @@
             </rowConstraints>
             <Label text="Deadline Date:"/>
             <DatePicker fx:id="dp2" editable="false" GridPane.rowIndex="1"/>
-
-
-
         </GridPane>
-
-
 
         <VBox alignment="CENTER" prefWidth="100.0">
             <VBox.margin>
